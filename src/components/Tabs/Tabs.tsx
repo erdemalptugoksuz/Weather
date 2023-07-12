@@ -38,7 +38,7 @@ const Tabs = ({weather}: any) => {
           ),
           title: 'Upcoming Weather',
         }}>
-        {() => <UpcomingWeather weatherData={weather} />}
+        {() => <UpcomingWeather weatherData={weather.list} />}
       </Tab.Screen>
     </Tab.Navigator>
   );
