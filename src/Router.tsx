@@ -8,8 +8,6 @@ import {Tabs} from './components';
 const Router = () => {
   const [loading, error, weather] = useFetch();
 
-  console.log(error);
-
   if (weather && weather.list && !loading) {
     return (
       <NavigationContainer>
