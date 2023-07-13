@@ -5,9 +5,10 @@ import styles from './UpcomingWeather.style';
 import {UpcomingItem} from '../../components';
 
 const UpcomingWeather = ({weatherData}: any) => {
+  const {container, title} = styles;
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Upcoming Weather</Text>
+    <SafeAreaView style={container}>
+      <Text style={title}>Upcoming Weather</Text>
       <FlatList
         data={weatherData}
         renderItem={({item}) => (

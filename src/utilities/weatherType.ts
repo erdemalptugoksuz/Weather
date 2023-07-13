@@ -1,4 +1,12 @@
-export const weatherType = {
+type WeatherType = {
+  [key: string]: {
+    icon: string;
+    message: string;
+    backgroundColor: string;
+  };
+};
+
+export const weatherType: WeatherType = {
   Thunderstorm: {
     icon: 'zap',
     message: 'It could get noisy!',

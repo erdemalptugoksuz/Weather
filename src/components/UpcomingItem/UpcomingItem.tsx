@@ -8,12 +8,14 @@ import {weatherType} from '../../utilities/weatherType';
 
 const UpcomingItem = (props: any) => {
   const {condition, dt_txt, min, max} = props;
+  const {container, day, weather, hour} = styles;
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.day}>{moment(dt_txt).format('ddd')}</Text>
-      <View style={styles.weather}>
+    <View style={container}>
+      <Text style={day}>{moment(dt_txt).format('ddd')}</Text>
+      <View style={weather}>
         <Icon name={weatherType[condition].icon} size={25} color="black" />
-        <Text style={styles.hour}>{moment(dt_txt).format('hh:mm')}</Text>
+        <Text style={hour}>{moment(dt_txt).format('hh:mm')}</Text>
       </View>
       <Text>{`${Math.round(min)}° / ${Math.round(max)}°`}</Text>
     </View>

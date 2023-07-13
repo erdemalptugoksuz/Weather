@@ -7,6 +7,15 @@ import {CurrentWeather, UpcomingWeather} from '../../screens';
 const Tab = createBottomTabNavigator();
 
 const Tabs = ({weather}: any) => {
+  const renderTabIcon = (
+    name: string,
+    size: number,
+    color: string,
+    focused: boolean,
+  ) => {
+    return <Icon name={name} size={size} color={focused ? 'tomato' : 'gray'} />;
+  };
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -15,28 +24,18 @@ const Tabs = ({weather}: any) => {
       <Tab.Screen
         name="CurrentWeatherScreen"
         options={{
-          tabBarIcon: ({focused}) => (
-            <Icon
-              name={'droplet'}
-              size={25}
-              color={focused ? 'tomato' : 'gray'}
-            />
-          ),
-          title: 'Current Weather',
+          tabBarLabel: () => null,
+          tabBarIcon: ({size, color, focused}) =>
+            renderTabIcon('droplet', size, color, focused),
         }}>
         {() => <CurrentWeather weatherData={weather} />}
       </Tab.Screen>
       <Tab.Screen
         name="UpcomingWeatherScreen"
         options={{
-          tabBarIcon: ({focused}) => (
-            <Icon
-              name={'clock'}
-              size={25}
-              color={focused ? 'tomato' : 'gray'}
-            />
-          ),
-          title: 'Upcoming Weather',
+          tabBarLabel: () => null,
+          tabBarIcon: ({size, color, focused}) =>
+            renderTabIcon('clock', size, color, focused),
         }}>
         {() => <UpcomingWeather weatherData={weather.list} />}
       </Tab.Screen>

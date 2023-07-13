@@ -3,11 +3,11 @@ import * as Location from 'expo-location';
 import {WEATHER_API_KEY} from '@env';
 
 export const useFetch = () => {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
   const [weather, setWeather] = useState([]);
-  const [lat, setLat] = useState(null);
-  const [lon, setLon] = useState(null);
+  const [lat, setLat] = useState<number | null>(null);
+  const [lon, setLon] = useState<number | null>(null);
 
   const fetchWeatherData = async () => {
     try {
@@ -16,7 +16,7 @@ export const useFetch = () => {
       );
       const data = await res.json();
       setWeather(data);
-    } catch (err) {
+    } catch (err: any) {
       setError(err);
     } finally {
       setLoading(false);
@@ -34,10 +34,10 @@ export const useFetch = () => {
           return;
         }
 
-        let location = await Location.getCurrentPositionAsync({});
+        let location: any = await Location.getCurrentPositionAsync({});
         setLat(location.coords.latitude);
         setLon(location.coords.longitude);
-      } catch (err) {
+      } catch (err: any) {
         setError(err);
         setLoading(false);
       }

@@ -6,10 +6,12 @@ import styles from './WeatherInfo.style';
 
 const WeatherInfo = (props: any) => {
   const {value, name} = props;
+  const {container, value: valueStyle} = styles;
+
   return (
-    <View style={styles.container}>
+    <View style={container}>
       <Icon name={name} size={30} color={'tomato'} />
-      <Text style={styles.value}>{value}°</Text>
+      <Text style={valueStyle}>{value}°</Text>
     </View>
   );
 };
