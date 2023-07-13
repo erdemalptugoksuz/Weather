@@ -11,3 +11,7 @@
 **Packages:** React Navigation, Moment, Expo Location, React Native Vector Icons, React Native Dotenv
 
 **Api:** [Open Weather Map | Hourly Forecast](https://openweathermap.org/api/hourly-forecast) 
+
+## Usage Video
+
+https://github.com/erdemalptugoksuz/Weather/assets/81254185/25061032-47bd-4601-88fc-b15d39cae632
